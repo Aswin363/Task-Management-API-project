@@ -1,385 +1,265 @@
-<<<<<<< HEAD
-# Task Management API (Flask + JWT + RBAC)
+# 🚀 Task Management API
 
-> 🎓 MCA Final Year Project  
-> A secure and scalable Task Management API with Role-Based Access Control and JWT Authentication.
+**Production-Grade Backend System using Flask**
 
 ---
 
-## Project Overview
+## 📌 Overview
 
-This project is a backend system designed to simulate real-world task management used in organizations.
+The Task Management API is a production-ready backend system developed using Flask, designed with modern software engineering principles such as modular architecture, secure authentication, and scalable API design.
 
-It focuses on:
-- Secure authentication
-- Role-based authorization
-- Controlled task workflow
-- Clean and modular backend architecture
+This system enables efficient task management with strict role-based access control, ensuring that users can perform only authorized operations. The application simulates real-world enterprise backend systems with strong emphasis on security, maintainability, and performance optimization.
 
 ---
 
-## Project Structure
-task_manager_API/
+## 🎯 Objectives
+
+* Design a scalable RESTful API using Flask
+* Implement secure authentication using JWT
+* Enforce Role-Based Access Control (RBAC)
+* Maintain clean and modular architecture
+* Support pagination, filtering, and sorting
+* Ensure robust validation and error handling
+* Implement unit testing for reliability
+
+---
+
+## ⚙️ Core Features
+
+### 🔐 Authentication & Security
+
+* Secure user registration and login
+* JWT-based authentication with role claims
+* Password hashing using Werkzeug
+* Rate limiting (Brute-force protection)
+* Input validation and error handling
+
+---
+
+### 📋 Task Management
+
+* Full CRUD operations for tasks
+* Task assignment to users
+* Soft delete mechanism
+* Task status tracking (pending → in_progress → completed)
+* Ownership validation for secure access
+
+---
+
+### 🛡️ Role-Based Access Control (RBAC)
+
+**Admin Permissions:**
+
+* Create and assign tasks
+* View all tasks
+* Update and delete tasks
+
+**User Permissions:**
+
+* View assigned tasks
+* Update only task status
+* Restricted access to other users' data
+
+---
+
+### 🌐 API Capabilities
+
+* RESTful API design
+* JSON-based request-response handling
+* Swagger documentation (Flask-RESTX)
+* Pagination, filtering, and sorting
+* Standard HTTP status codes
+
+---
+
+### 🧪 Testing
+
+* Unit testing using pytest
+* Covers authentication and task APIs
+* Handles edge cases and validation scenarios
+
+---
+
+## 🧰 Technology Stack
+
+* **Language:** Python 3
+* **Framework:** Flask
+* **ORM:** SQLAlchemy
+* **Authentication:** Flask-JWT-Extended
+* **Rate Limiting:** Flask-Limiter
+* **API Docs:** Flask-RESTX (Swagger)
+* **Database:** SQLite
+* **Testing:** pytest
+
+---
+
+## 🏗️ Project Architecture
+
+The system follows a modular layered architecture:
+
+* **Routes Layer:** API endpoints
+* **Business Logic Layer:** Core application rules
+* **Data Layer:** Database interactions
+* **Security Layer:** JWT authentication & RBAC
+
+This architecture ensures scalability, maintainability, and separation of concerns.
+
+---
+
+## 🗄️ Database Design
+
+### User
+
+* Stores authentication details and roles
+* Supports RBAC
+
+### Task
+
+* Stores task information
+* Includes status tracking and soft delete
+* Linked to User via foreign key
+
+---
+
+## 🔗 API Endpoints
+
+### Authentication
+
+* `POST /auth/register`
+* `POST /auth/login`
+
+### Tasks
+
+* `GET /api/tasks`
+* `POST /api/tasks`
+* `GET /api/tasks/{id}`
+* `PUT /api/tasks/{id}`
+* `DELETE /api/tasks/{id}`
+* `PATCH /api/tasks/{id}/assign`
+
+---
+
+## 🔄 Authentication Flow
+
+1. User registers
+2. User logs in
+3. JWT token is generated
+4. Token is sent in Authorization header
+5. Protected APIs validate token before execution
+
+---
+
+## 🚀 Running the Project
+
+
+### 2. Create Virtual Environment
+
+```bash
+python -m venv venv
+```
+
+Activate:
+
+**Windows:**
+
+```bash
+venv\Scripts\activate
+```
+
+**Linux/Mac:**
+
+```bash
+source venv/bin/activate
+```
+
+---
+
+### 3. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+### 4. Configure Environment Variables
+
+Create `.env` file:
+
+```
+SECRET_KEY=your-secret-key
+JWT_SECRET_KEY=your-jwt-secret
+ADMIN_SECRET=your-admin-key
+```
+
+---
+
+### 5. Run Application
+
+```bash
+python app.py
+```
+
+---
+
+### 6. Access Swagger UI
+
+```
+http://127.0.0.1:5000/docs
+```
+
+---
+
+## 📁 Project Structure
+
+```
+Task-Management-API-project/
 │
-├── app.py # Main application entry point
-├── config.py # Configuration (DB, JWT)
-├── models.py # Database models (User, Task)
-│
-├── routes/
-│ ├── auth.py # Register & Login APIs
-│ └── tasks.py # Task CRUD APIs
+├── app/
+│   ├── __init__.py
+│   ├── models.py
+│   ├── extensions.py
+│   ├── routes/
+│   │   ├── auth.py
+│   │   ├── tasks.py
+│   ├── services/
+│   ├── utils/
 │
 ├── instance/
-│ └── tasks.db # SQLite database
+│   └── tasks.db
 │
-├── venv/ # Virtual environment
-└── README.md
+├── tests/
+├── config.py
+├── app.py
+├── requirements.txt
+├── .env
+├── .gitignore
+├── README.md
+```
 
 ---
 
-##  Technologies Used
+## 🔒 Security Considerations
 
-- Python (Flask)
-- Flask-SQLAlchemy
-- Flask-JWT-Extended
-- SQLite
-- Flasgger (Swagger UI)
-
----
-
-##  Authentication System
-
-- JWT (JSON Web Token) based authentication
-- Password hashing for security
-- Token required for protected routes
-
-Example:
-Authorization: Bearer <your-token>
+* Passwords stored as hashed values
+* JWT ensures secure API communication
+* RBAC restricts unauthorized access
+* Rate limiting prevents brute-force attacks
 
 ---
 
-##  Role-Based Access Control (RBAC)
+## 🔮 Future Enhancements
 
-| Role  | Permissions |
-|-------|------------|
-| Admin | Full access (create, update, delete any task) |
-| User  | Can manage only their own tasks |
-
----
-
-##  Task Workflow
-pending → in-progress → completed
-
-- Users must follow this sequence
-- Admin can override status
+* PostgreSQL integration
+* Docker deployment
+* Microservices architecture
+* Frontend integration
+* Notification system
 
 ---
 
-##  API Endpoints
+## 📌 Conclusion
 
-###  Auth
-
-| Method | Endpoint   | Description |
-|--------|-----------|------------|
-| POST   | /register | Register user |
-| POST   | /login    | Login & get JWT |
+This project demonstrates the implementation of a production-grade backend system with strong emphasis on security, modular design, and scalability. It reflects real-world API development practices and is suitable for extension into enterprise-level applications.
 
 ---
-
-###  Tasks
-
-| Method | Endpoint        | Description |
-|--------|----------------|------------|
-| POST   | /tasks         | Create task |
-| GET    | /tasks         | Get tasks |
-| PUT    | /tasks/{id}    | Update task |
-| DELETE | /tasks/{id}    | Delete task |
-
----
-
-##  Validation Rules
-
-- Title: 3–100 characters
-- Description: Max 200 characters
-- Status: pending / in-progress / completed
-- Password: Must contain uppercase + number
-
----
-
-##  Database Design
-
-###  User Table
-- id
-- username
-- password (hashed)
-- role
-
-###  Task Table
-- id
-- title
-- description
-- status
-- user_id (Foreign Key)
-
----
-
-##  Relationship
-
-One User → Many Tasks
-
----
-
-##  Swagger Documentation
-http://127.0.0.1:5000/apidocs/
-
----
-
-##  Testing
-
-- Swagger UI
-- Role-based testing:
-  - Admin → full control
-  - User → restricted access
-  - Unauthorized access → 403 error
-
----
-
-##  Screenshots Included
-
-- Registration
-- Login (JWT Token)
-- Create Task
-- Get Tasks
-- Update Task
-- Unauthorized Access (403)
-- Delete Task
-- Database View
-
----
-
-##  Important Notes
-
-- Strong JWT secret key required
-- Do not use debug mode in production
-- Input validation ensures data integrity
-
----
-
-##  Conclusion
-
-This project demonstrates:
-
-- REST API development
-- Authentication & Authorization
-- Database design
-- Secure coding practices
-- Real-world backend logic
-
----
-
-##  Author
-
-**Aswinsahu**  
-MCA Final Year Student
-
----
-
-##  Acknowledgment
-
-I sincerely thank my faculty and HOD for their guidance and support.
-
----
-
-##  Final Statement
-
-This project represents a complete backend system with security, validation, and real-world architecture.
-=======
-Task Management API
-
-Project Overview
-
-This project is a production-like REST API built using Flask. It allows users to manage tasks with authentication, role-based access, and a structured task workflow.
-
-The system is designed to simulate real-world backend behavior where admin and normal users have different responsibilities.
-
-Admin can create, assign, update, and monitor tasks.
-User can view and update only their assigned tasks.
-
----
-
-Features
-
-Authentication
-User registration
-User login using JWT
-Secure password hashing
-
-Task Management
-Create task
-Get tasks with pagination and filtering
-Update task
-Delete task
-
-Role-Based Access
-Admin has full control
-User can access only their own tasks
-
-Task Assignment
-Admin can assign tasks to any user
-User cannot assign tasks
-
-Task Status Workflow
-pending to in_progress to completed
-Invalid transitions are restricted
-
-Advanced Features
-Pagination using page and limit
-Filtering using title search
-Proper HTTP status codes
-Structured JSON responses
-
----
-
-Tech Stack
-
-Backend: Flask
-Database: SQLite
-ORM: SQLAlchemy
-Authentication: Flask-JWT-Extended
-API Documentation: Swagger (Flasgger)
-
----
-
-Project Structure
-
-task_manager_api/
-
-app.py
-config.py
-models.py
-requirements.txt
-
-routes/
-auth.py
-tasks.py
-
-tests/
-screenshots/
-README.md
-
----
-
-Installation and Setup
-
-Clone the repository
-
-git clone your-repo-link
-
-Go to project folder
-
-cd task_manager_api
-
-Create virtual environment
-
-python -m venv venv
-venv\Scripts\activate
-
-Install dependencies
-
-pip install -r requirements.txt
-
-Run the server
-
-python app.py
-
----
-
-API Endpoints
-
-Authentication
-
-POST /register
-Register a new user
-
-POST /login
-Login and get JWT token
-
-Tasks
-
-GET /tasks
-Get tasks with pagination and filtering
-
-POST /tasks
-Create a new task
-
-PUT /tasks/<id>
-Update task
-
-DELETE /tasks/<id>
-Delete task
-
----
-
-Authorization
-
-Use JWT token in header
-
-Authorization: Bearer your_token
-
----
-
-Test Cases
-
-Register success
-Register duplicate
-Login success
-Login invalid
-Task creation authorized
-
----
-
-Screenshots
-
-Authentication flows
-Task CRUD operations
-Role-based access
-Status updates
-Error handling
-
----
-
-Key Concepts Used
-
-REST API design
-JWT authentication
-Role-based authorization
-Input validation
-Error handling
-Database transactions
-Secure password hashing
-
----
-
-Production-Level Features
-
-Role-based access control
-Task assignment system
-Status workflow control
-Secure authentication
-Clean API design
-
----
-
-Future Improvements
-
-Refresh tokens
-Email notifications
-Task deadlines
-Frontend integration
-
----
-
-Conclusion
-
-This project demonstrates practical backend development skills with focus on security, clean architecture, and real-world API design.
->>>>>>> db5435423e611bbacc207e1192c71317df88fd27
