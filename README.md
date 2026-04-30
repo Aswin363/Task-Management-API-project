@@ -1,12 +1,12 @@
 <<<<<<< HEAD
-# 🚀 Task Management API (Flask + JWT + RBAC)
+# Task Management API (Flask + JWT + RBAC)
 
 > 🎓 MCA Final Year Project  
 > A secure and scalable Task Management API with Role-Based Access Control and JWT Authentication.
 
 ---
 
-## 🧠 Project Overview
+## Project Overview
 
 This project is a backend system designed to simulate real-world task management used in organizations.
 
@@ -18,7 +18,7 @@ It focuses on:
 
 ---
 
-## 🏗️ Project Structure
+## Project Structure
 task_manager_API/
 │
 ├── app.py # Main application entry point
@@ -37,7 +37,7 @@ task_manager_API/
 
 ---
 
-## ⚙️ Technologies Used
+##  Technologies Used
 
 - Python (Flask)
 - Flask-SQLAlchemy
@@ -47,7 +47,7 @@ task_manager_API/
 
 ---
 
-## 🔐 Authentication System
+##  Authentication System
 
 - JWT (JSON Web Token) based authentication
 - Password hashing for security
@@ -58,7 +58,7 @@ Authorization: Bearer <your-token>
 
 ---
 
-## 👥 Role-Based Access Control (RBAC)
+##  Role-Based Access Control (RBAC)
 
 | Role  | Permissions |
 |-------|------------|
@@ -67,7 +67,7 @@ Authorization: Bearer <your-token>
 
 ---
 
-## 📋 Task Workflow
+##  Task Workflow
 pending → in-progress → completed
 
 - Users must follow this sequence
@@ -75,9 +75,9 @@ pending → in-progress → completed
 
 ---
 
-## 📌 API Endpoints
+##  API Endpoints
 
-### 🔐 Auth
+###  Auth
 
 | Method | Endpoint   | Description |
 |--------|-----------|------------|
@@ -86,7 +86,7 @@ pending → in-progress → completed
 
 ---
 
-### 📋 Tasks
+###  Tasks
 
 | Method | Endpoint        | Description |
 |--------|----------------|------------|
@@ -97,7 +97,7 @@ pending → in-progress → completed
 
 ---
 
-## 🧪 Validation Rules
+##  Validation Rules
 
 - Title: 3–100 characters
 - Description: Max 200 characters
@@ -106,15 +106,15 @@ pending → in-progress → completed
 
 ---
 
-## 🗄️ Database Design
+##  Database Design
 
-### 👤 User Table
+###  User Table
 - id
 - username
 - password (hashed)
 - role
 
-### 📋 Task Table
+###  Task Table
 - id
 - title
 - description
@@ -123,18 +123,18 @@ pending → in-progress → completed
 
 ---
 
-## 🔗 Relationship
+##  Relationship
 
 One User → Many Tasks
 
 ---
 
-## 🌐 Swagger Documentation
+##  Swagger Documentation
 http://127.0.0.1:5000/apidocs/
 
 ---
 
-## 🧪 Testing
+##  Testing
 
 - Swagger UI
 - Role-based testing:
@@ -144,7 +144,7 @@ http://127.0.0.1:5000/apidocs/
 
 ---
 
-## 📸 Screenshots Included
+##  Screenshots Included
 
 - Registration
 - Login (JWT Token)
@@ -157,7 +157,7 @@ http://127.0.0.1:5000/apidocs/
 
 ---
 
-## ⚠️ Important Notes
+##  Important Notes
 
 - Strong JWT secret key required
 - Do not use debug mode in production
@@ -165,7 +165,7 @@ http://127.0.0.1:5000/apidocs/
 
 ---
 
-## 🎯 Conclusion
+##  Conclusion
 
 This project demonstrates:
 
@@ -177,20 +177,20 @@ This project demonstrates:
 
 ---
 
-## 👨‍💻 Author
+##  Author
 
 **Aswinsahu**  
 MCA Final Year Student
 
 ---
 
-## 🙏 Acknowledgment
+##  Acknowledgment
 
 I sincerely thank my faculty and HOD for their guidance and support.
 
 ---
 
-## ⭐ Final Statement
+##  Final Statement
 
 This project represents a complete backend system with security, validation, and real-world architecture.
 =======
