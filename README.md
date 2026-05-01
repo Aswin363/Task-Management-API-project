@@ -1,10 +1,10 @@
-# 🚀 Task Management API
+#  Task Management API
 
 **Production-Grade Backend System using Flask**
 
 ---
 
-## 📌 Overview
+##  Overview
 
 The Task Management API is a production-ready backend system developed using Flask, designed with modern software engineering principles such as modular architecture, secure authentication, and scalable API design.
 
@@ -12,7 +12,7 @@ This system enables efficient task management with strict role-based access cont
 
 ---
 
-## 🎯 Objectives
+##  Objectives
 
 * Design a scalable RESTful API using Flask
 * Implement secure authentication using JWT
@@ -24,9 +24,9 @@ This system enables efficient task management with strict role-based access cont
 
 ---
 
-## ⚙️ Core Features
+##  Core Features
 
-### 🔐 Authentication & Security
+###  Authentication & Security
 
 * Secure user registration and login
 * JWT-based authentication with role claims
@@ -36,7 +36,7 @@ This system enables efficient task management with strict role-based access cont
 
 ---
 
-### 📋 Task Management
+###  Task Management
 
 * Full CRUD operations for tasks
 * Task assignment to users
@@ -46,7 +46,7 @@ This system enables efficient task management with strict role-based access cont
 
 ---
 
-### 🛡️ Role-Based Access Control (RBAC)
+###  Role-Based Access Control (RBAC)
 
 **Admin Permissions:**
 
@@ -62,7 +62,7 @@ This system enables efficient task management with strict role-based access cont
 
 ---
 
-### 🌐 API Capabilities
+###  API Capabilities
 
 * RESTful API design
 * JSON-based request-response handling
@@ -72,7 +72,7 @@ This system enables efficient task management with strict role-based access cont
 
 ---
 
-### 🧪 Testing
+### Testing
 
 * Unit testing using pytest
 * Covers authentication and task APIs
@@ -80,7 +80,7 @@ This system enables efficient task management with strict role-based access cont
 
 ---
 
-## 🧰 Technology Stack
+##  Technology Stack
 
 * **Language:** Python 3
 * **Framework:** Flask
@@ -93,7 +93,7 @@ This system enables efficient task management with strict role-based access cont
 
 ---
 
-## 🏗️ Project Architecture
+##  Project Architecture
 
 The system follows a modular layered architecture:
 
@@ -106,7 +106,7 @@ This architecture ensures scalability, maintainability, and separation of concer
 
 ---
 
-## 🗄️ Database Design
+##  Database Design
 
 ### User
 
@@ -121,7 +121,7 @@ This architecture ensures scalability, maintainability, and separation of concer
 
 ---
 
-## 🔗 API Endpoints
+##  API Endpoints
 
 ### Authentication
 
@@ -139,7 +139,7 @@ This architecture ensures scalability, maintainability, and separation of concer
 
 ---
 
-## 🔄 Authentication Flow
+##  Authentication Flow
 
 1. User registers
 2. User logs in
@@ -149,7 +149,7 @@ This architecture ensures scalability, maintainability, and separation of concer
 
 ---
 
-## 🚀 Running the Project
+##  Running the Project
 
 
 ### 2. Create Virtual Environment
@@ -239,7 +239,7 @@ Task-Management-API-project/
 
 ---
 
-## 🔒 Security Considerations
+##  Security Considerations
 
 * Passwords stored as hashed values
 * JWT ensures secure API communication
@@ -248,7 +248,7 @@ Task-Management-API-project/
 
 ---
 
-## 🔮 Future Enhancements
+##  Future Enhancements
 
 * PostgreSQL integration
 * Docker deployment
@@ -258,7 +258,7 @@ Task-Management-API-project/
 
 ---
 
-## 📌 Conclusion
+##  Conclusion
 
 This project demonstrates the implementation of a production-grade backend system with strong emphasis on security, modular design, and scalability. It reflects real-world API development practices and is suitable for extension into enterprise-level applications.
 
